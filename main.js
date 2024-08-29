@@ -1,5 +1,4 @@
 // Collect Player's choice
-// player = prompt("rock, paper, scissors: ")
 // Collect Computer random choice
 // Compare Player chioce and Computer choice
 // If Player 1's choice is equal to Computer's chioce then it's a draw
@@ -21,4 +20,11 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
+// Create a new function named getHumanChoice
+
+function getHumanChoice() {
+  let player = prompt("rock, paper, scissors: ");
+  return player;
+}
+
+console.log(getHumanChoice());
