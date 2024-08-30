@@ -18,14 +18,56 @@ function getComputerChoice() {
     } else {
         return "scissors";
     }
+    let computerChoice = randomNum;
 }
 
 // Create a new function named getHumanChoice
 
 function getHumanChoice() {
-  let player = prompt("rock, paper, scissors: ");
-  return player;
+  let humanChoice = prompt("rock, paper, scissors: ").toLowerCase();
+  return humanChoice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame() {
+
+
+    // Create two variables named humanScore and computerScore
+
+    let humanScore = 0;
+    let computerScore = 0;
+ 
+
+    // Create a new function named playRound
+    function playRound(humanChoice, computerChoice) {
+        // Convert humanChoice to lowercase
+        if (humanChoice === computerChoice) {
+            console.log("It's a draw!");
+            humanScore++;
+            computerScore++;
+            console.log("Your points: " + humanScore + ". Computer points: " + computerScore);
+        } else if (
+            humanChoice === "rock" && computerChoice === "paper" ||
+            humanChoice === "paper" && computerChoice === "scissors" ||
+            humanChoice === "scissors" && computerChoice === "rock"
+        ){
+            console.log("you lose!");
+            computerScore++;
+            console.log("Computer points: " + computerScore + ". Your points: " + humanScore);
+        } else {
+            console.log("you win!");
+            humanScore++;
+            console.log("You get one point extra: " + humanScore + "! Computer points: " + computerScore);
+        }
+    }
+
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+    playRound(humanChoice, computerChoice);
+}
+
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
